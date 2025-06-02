@@ -1,0 +1,40 @@
+﻿@model List<StudentInformation.Models.Student>
+
+<div class="d-flex justify-content-between align-items-center mt-4">
+    <h3 class="m-0">Student List</h3>
+    <a asp-action="RegisterStudent" class="btn" style="background-color: teal; color: white;">Register</a>
+</div>
+<table class="table mt-2">
+    <thead style="color: teal;">
+        <tr>
+            <th>Student ID</th>
+            <th>Full Name</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Contact Number</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentID</td>
+                <td>@student.FullName</td>
+                <td>@student.DateOfBirth.ToString("MMM d, yyyy")</td>
+                <td>@student.Gender</td>
+                <td>@student.Address</td>
+                <td>@student.ContactNumber</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@student.StudentID" class="fw-bold" style="color: teal;">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@student.StudentID" class="fw-bold text-secondary">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>
+
