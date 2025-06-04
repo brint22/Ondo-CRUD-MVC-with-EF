@@ -25,3 +25,5 @@ namespace StudentInformation.Controllers
         }
     }
 }
+
+// about controller
