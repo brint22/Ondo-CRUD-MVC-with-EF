@@ -54,6 +54,8 @@ namespace StudentInformation.Controllers
             return View(student);
         }
 
+        // 
+
         [HttpPost]
         public async Task<IActionResult> Edit(int id, Student student)
         {
